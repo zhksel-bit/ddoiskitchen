@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>DDO's Kitchen Menu</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+KR:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body, html { width: 100%; height: 100%; background: #d8d4ce; overflow: hidden; }
+  
+  .swiper { width: 100%; height: 100%; }
+  .swiper-slide { display: flex; justify-content: center; align-items: center; background: #d8d4ce; }
+
+  /* 아이패드 전체 화면 최적화 레이아웃 */
+  .page-content {
+    width: 100vw; height: 100vh;
+    background: #f8f6f3;
+    position: relative;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 0 15%; /* 메뉴 가독성을 위한 좌우 여백 확보 */
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+  }
+
+  /* 종이 질감 원본 유지 */
+  .page-content::before {
+    content: ''; position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.01'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 1;
+  }
+
+  .content-inner { position: relative; z-index: 2; width: 100%; text-align: center; }
+
+  /* --- 폰트 크기: 요청하신 115% 확대 적용 --- */
+  .restaurant-name { font-size: 18px; letter-spacing: 8px; color: #6b6358; text-transform: uppercase; } 
+  .restaurant-sub { font-size: 8.05px; font-style: italic; letter-spacing: 4px; color: #b0a594; margin-top: 16px; } 
+
+  .story-label { font-size: 8.05px; letter-spacing: 5.5px; text-transform: uppercase; color: #b5ab9e; margin-bottom: 60px; }
+  .story-text, .back-quote { font-weight: 200; font-size: 9.2px; line-height: 2.8; color: #7a7168; letter-spacing: 0.6px; word-break: keep-all; }
+  .story-text p, .back-quote p { margin-bottom: 24px; }
+  
+  .course-title { font-size: 10.35px; letter-spacing: 7px; color: #9e9285; margin-bottom: 45px; }
+  .menu-name-kr { font-size: 9.8px; color: #5e564d; letter-spacing: 2.5px; margin-bottom: 4px; font-weight: 300; }
+  .menu-name-en { font-size: 8.05px; color: #aaa08f; letter-spacing: 1px; font-style: italic; }
+  .menu-desc { font-size: 7.5px; color: #bbb0a2; line-height: 1.7; margin-top: 4px; font-weight: 200; }
+  
+  .block-spacer { width: 16px; height: 1px; background: rgba(175,165,150,0.28); margin: 20px auto; }
+  .menu-item { margin-bottom: 18px; }
+  .back-hashtags { font-size: 8.05px; letter-spacing: 3px; color: #b8b0a4; margin-top: 40px; }
+  .cover-line { width: 24px; height: 1px; background: rgba(170,160,145,0.35); margin: 28px auto 0; }
+</style>
+</head>
+<body>
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <div class="page-content">
+        <div class="content-inner">
+          <div class="restaurant-name">DDO's Kitchen</div>
+          <div class="restaurant-sub">a private dining experience</div>
+          <div class="cover-line"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-slide">
+      <div class="page-content">
+        <div class="content-inner">
+          <div class="story-label">Course Story</div>
+          <div class="story-text">
+            <p>시간은 때로 몸보다 마음을 먼저 지치게 합니다.</p>
+            <p>오늘의 식탁은 깊은 바다에서 시작해<br>계절의 숨결을 지나 자연의 품으로 돌아오는 여정입니다.</p>
+            <p>천천히 이어지는 온기와 향,<br>그리고 식재료가 머금은 시간의 결을 통해<br>잠시 잊고 있던 균형과 평온을 전합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-slide">
+      <div class="page-content">
+        <div class="content-inner">
+          <div class="course-title">여 정 의 &nbsp; 흐 름</div>
+          <div class="menu-list">
+            <div class="menu-item">
+              <div class="menu-name-kr">심해의 정원</div>
+              <div class="menu-name-en">Seaweed &amp; Beef Broth</div>
+              <div class="menu-desc">깊고 잔잔한 바다의 시간이 따뜻하게 몸을 감싸는 시작</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-name-kr">맑은 싹의 결</div>
+              <div class="menu-name-en">Seasoned Bean Sprouts</div>
+              <div class="menu-desc">담백한 순수함 속에서 은은하게 퍼지는 고소한 균형</div>
+            </div>
+            <div class="block-spacer"></div>
+            <div class="menu-item">
+              <div class="menu-name-kr">초록의 여운</div>
+              <div class="menu-name-en">Seasoned Spinach</div>
+              <div class="menu-desc">짧은 숨으로 머금은 자연의 싱그러움이 고요히 번지는 맛</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-name-kr">온기와 숙성의 조화</div>
+              <div class="menu-name-en">Grilled Pork Belly with Tofu &amp; Aged Kimchi</div>
+              <div class="menu-desc">불의 온기와 발효의 깊이가 만나 완성된 따뜻한 대비</div>
+            </div>
+            <div class="block-spacer"></div>
+            <div class="menu-item">
+              <div class="menu-name-kr">결의 향연</div>
+              <div class="menu-name-en">Harmony of Glass Noodles</div>
+              <div class="menu-desc">여러 식재료의 결이 어우러져 조화로운 풍요를 그리는 순간</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-name-kr">황금 겹</div>
+              <div class="menu-name-en">Layered Egg Roll</div>
+              <div class="menu-desc">부드럽게 포개진 온기가 입안에서 천천히 풀어지는 위로</div>
+            </div>
+            <div class="block-spacer"></div>
+            <div class="menu-item">
+              <div class="menu-name-kr">계절의 첫 숨</div>
+              <div class="menu-name-en">Fresh Seasoned Cabbage</div>
+              <div class="menu-desc">막 깨어난 채소가 전하는 생동감과 가벼운 설렘</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-name-kr">채운 시간</div>
+              <div class="menu-name-en">Stuffed Cucumber Kimchi</div>
+              <div class="menu-desc">천천히 스며든 양념이 아삭한 식감 속에 머무는 기다림</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-name-kr">잎의 화음</div>
+              <div class="menu-name-en">Seasonal Ssam Vegetables</div>
+              <div class="menu-desc">다양한 향과 식감이 어우러져 완성되는 자연의 포옹</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-slide">
+      <div class="page-content">
+        <div class="content-inner">
+          <div class="back-quote">
+            <p>태어나줘서 고마워요.</p>
+            <p>당신이 이 세상에 온 날,<br>제 계절도 함께 시작되었습니다.</p>
+            <p>오늘 이 식탁 위의 시간이<br>당신에게 작은 쉼이 되길.</p>
+          </div>
+          <div class="back-hashtags">#HappyBirthday &nbsp; #WithLove</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    speed: 700,
+    grabCursor: true,
+    effect: 'creative', // 자연스러운 슬라이딩 효과
+    creativeEffect: {
+      prev: {
+        shadow: true,
+        translate: ["-20%", 0, -1],
+      },
+      next: {
+        translate: ["100%", 0, 0],
+      },
+    },
+    resistanceRatio: 0, // 첫/마지막 페이지 저항감 설정
+  });
+</script>
+</body>
+</html>
